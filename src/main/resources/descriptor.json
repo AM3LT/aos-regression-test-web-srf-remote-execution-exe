@@ -1,4 +1,6 @@
-{
-  "runnableClass": "net.mf.LeanFtTest",
-  "framework": "junit"
-}
+[
+  {
+    "runnableClass": "LeanFtTest",
+    "framework": "junit"
+  }
+]

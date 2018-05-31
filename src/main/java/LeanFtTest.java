@@ -1,4 +1,3 @@
-package net.mf;
 
 import static org.junit.Assert.*;
 
