@@ -1,3 +1,5 @@
+package net.mf;
+
 import static org.junit.Assert.*;
 
 import com.hp.lft.report.*;
@@ -8,15 +10,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import com.hp.lft.sdk.*;
 import com.hp.lft.sdk.web.*;
-import com.hp.lft.verifications.*;
 
 import unittesting.*;
-
-import java.awt.image.BufferedImage;
-import java.awt.image.WritableRenderedImage;
-import java.awt.Robot;
-import java.net.URI;
-import java.net.URL;
 
 public class LeanFtTest extends UnitTestClassBase {
 
@@ -34,7 +29,24 @@ public class LeanFtTest extends UnitTestClassBase {
         // Launch the browser
         browser = BrowserFactory.launch(BrowserType.CHROME);
 
-        browser.navigate("http://nimbusserver:8000");
+        //Launch browser remotely on SRF
+//        BrowserDescription bd = new BrowserDescription();
+//
+//        bd.setType(BrowserType.CHROME); //or: bd.set("type", BrowserType.INTERNET_EXPLORER) or: bd.set("type", "FIREFOX")
+//
+//        bd.set("version", "66");
+//
+//        bd.set("osType", "Windows");
+//
+//        bd.set("osVersion", "10");
+//
+//        bd.set("testName", "Live from IntelliJ!");
+//
+//        browser = SrfLab.launchBrowser(bd);
+
+//        browser.navigate("http://nimbusserver:8000");
+
+        browser.navigate("http://www.advantageonlineshopping.com");
     }
 
     @AfterClass
