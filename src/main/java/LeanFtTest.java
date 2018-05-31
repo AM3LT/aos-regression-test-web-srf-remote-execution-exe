@@ -25,8 +25,8 @@ public class LeanFtTest extends UnitTestClassBase {
         instance = new LeanFtTest();
         globalSetup(LeanFtTest.class);
 
-        // Launch the browser
-        browser = BrowserFactory.launch(BrowserType.CHROME);
+        // Launch the local browser
+       browser = BrowserFactory.launch(BrowserType.CHROME);
 
         //Launch browser remotely on SRF
 //        BrowserDescription bd = new BrowserDescription();
@@ -43,8 +43,10 @@ public class LeanFtTest extends UnitTestClassBase {
 //
 //        browser = SrfLab.launchBrowser(bd);
 
-//        browser.navigate("http://nimbusserver:8000");
+        //Use Nimbus AOS
+        //browser.navigate("http://nimbusserver:8000");
 
+        //Use Public AOS
         browser.navigate("http://www.advantageonlineshopping.com");
     }
 
@@ -52,7 +54,12 @@ public class LeanFtTest extends UnitTestClassBase {
     public static void tearDownAfterClass() throws Exception {
         // Close the browser - this must occur before the globalTearDown. Otherwise, you will see the following error:
         // "An Internal problem has occurred, please make sure the LeanFT sdk was properly initialized." - Jason H.
+
+        //Close Local Browser
         browser.close();
+
+        //Close SRF Browser
+        //SrfLab.releaseEnvironment(browser);
 
         globalTearDown();
 
