@@ -1,4 +1,5 @@
 
+import static java.lang.Thread.sleep;
 import static org.junit.Assert.*;
 
 import com.hp.lft.report.*;
@@ -27,7 +28,7 @@ public class LeanFtTest extends UnitTestClassBase {
 
         // Launch the local browser
        browser = BrowserFactory.launch(BrowserType.CHROME);
-
+       browser.clearCache();
         //Launch browser remotely on SRF
 //        BrowserDescription bd = new BrowserDescription();
 //
@@ -44,10 +45,11 @@ public class LeanFtTest extends UnitTestClassBase {
 //        browser = SrfLab.launchBrowser(bd);
 
         //Use Nimbus AOS
-        //browser.navigate("http://nimbusserver:8000");
+        browser.navigate("http://nimbusserver.aos.com:8000");
 
         //Use Public AOS
-        browser.navigate("http://www.advantageonlineshopping.com");
+        //browser.navigate("http://www.advantageonlineshopping.com");
+        //sleep(10000,0);
     }
 
     @AfterClass
@@ -137,113 +139,112 @@ public class LeanFtTest extends UnitTestClassBase {
     }
 
 
-
-    @Test
-    public void testLaptops() throws GeneralLeanFtException  {
-
-        //browser.navigate("http://nimbusserver:8000/#/");
-
-        // Laptops
-        browser.describe(WebElement.class, new WebElementDescription.Builder()
-                .tagName("SPAN").innerText("LAPTOPS").build()).click();
-
-        browser.describe(WebElement.class, new WebElementDescription.Builder()
-                .tagName("LI").innerText("SOLD OUT SHOP NOW HP Chromebook 14 G1(ENERGY STAR) $299.99 ").build()).click();
-        browser.describe(Link.class, new LinkDescription.Builder()
-                .tagName("A").innerText("LAPTOPS ").build()).click();
-
-        browser.describe(WebElement.class, new WebElementDescription.Builder()
-                .tagName("LI").innerText("SOLD OUT SHOP NOW HP Chromebook 14 G1(ES) $1,261.99 ").build()).click();
-        browser.describe(Link.class, new LinkDescription.Builder()
-                .tagName("A").innerText("LAPTOPS ").build()).click();
-
-        browser.describe(WebElement.class, new WebElementDescription.Builder()
-                .tagName("LI").innerText("SOLD OUT SHOP NOW HP ENVY - 17t Touch Laptop $849.99 ").build()).click();
-        browser.describe(Link.class, new LinkDescription.Builder()
-                .tagName("A").innerText("LAPTOPS ").build()).click();
-
-        browser.describe(WebElement.class, new WebElementDescription.Builder()
-                .tagName("LI").innerText("SOLD OUT SHOP NOW HP ENVY x360 - 15t Laptop $699.99 ").build()).click();
-        browser.describe(Link.class, new LinkDescription.Builder()
-                .tagName("A").innerText("LAPTOPS ").build()).click();
-
-        // Go Home
-        browser.describe(Link.class, new LinkDescription.Builder()
-                .tagName("A").innerText("dvantage DEMO ").build()).click();
-    }
-
-    @Test
-    public void testMice() throws GeneralLeanFtException  {
-
-       // browser.navigate("http://nimbusserver:8000/#/");
-
-        // Mice
-        browser.describe(WebElement.class, new WebElementDescription.Builder()
-                .tagName("SPAN").innerText("MICE").build()).click();
-
-        browser.describe(WebElement.class, new WebElementDescription.Builder()
-                .tagName("LI").innerText("SOLD OUT SHOP NOW HP USB 3 Button Optical Mouse $9.99 ").build()).click();
-        browser.describe(Link.class, new LinkDescription.Builder()
-                .tagName("A").innerText("MICE ").build()).click();
-
-        browser.describe(WebElement.class, new WebElementDescription.Builder()
-                .tagName("LI").innerText("SOLD OUT SHOP NOW HP Z3200 Wireless Mouse $29.99 ").build()).click();
-        browser.describe(Link.class, new LinkDescription.Builder()
-                .tagName("A").innerText("MICE ").build()).click();
-
-        browser.describe(WebElement.class, new WebElementDescription.Builder()
-                .tagName("LI").innerText("SOLD OUT SHOP NOW HP Z3600 Wireless Mouse $15.99 ").build()).click();
-        browser.describe(Link.class, new LinkDescription.Builder()
-                .tagName("A").innerText("MICE ").build()).click();
-
-        browser.describe(WebElement.class, new WebElementDescription.Builder()
-                .tagName("LI").innerText("SOLD OUT SHOP NOW HP Z3600 Wireless Mouse $15.99 ").build()).click();
-        browser.describe(Link.class, new LinkDescription.Builder()
-                .tagName("A").innerText("MICE ").build()).click();
-
-        browser.describe(WebElement.class, new WebElementDescription.Builder()
-                .tagName("LI").innerText("SOLD OUT SHOP NOW HP Z4000 Wireless Mouse $9.99 ").build()).click();
-        browser.describe(Link.class, new LinkDescription.Builder()
-                .tagName("A").innerText("MICE ").build()).click();
-
-        // Go Home
-        browser.describe(Link.class, new LinkDescription.Builder()
-                .tagName("A").innerText("dvantage DEMO ").build()).click();
-    }
-
-    @Test
-    public void testHeadphones() throws GeneralLeanFtException  {
-
-        //browser.navigate("http://nimbusserver:8000/#/");
-
-        // Headphones
-        browser.describe(WebElement.class, new WebElementDescription.Builder()
-                .tagName("SPAN").innerText("HEADPHONES").build()).click();
-
-        browser.describe(WebElement.class, new WebElementDescription.Builder()
-                .tagName("LI").innerText("SOLD OUT SHOP NOW Beats Studio 2 Over-Ear Matte Black Headphones $179.99 ").build()).click();
-        browser.describe(Link.class, new LinkDescription.Builder()
-                .tagName("A").innerText("HEADPHONES ").build()).click();
-
-        browser.describe(WebElement.class, new WebElementDescription.Builder()
-                .tagName("LI").innerText("SOLD OUT SHOP NOW Bose SoundLink Around-ear Wireless Headphones II $279.95 ").build()).click();
-        browser.describe(Link.class, new LinkDescription.Builder()
-                .tagName("A").innerText("HEADPHONES ").build()).click();
-
-        browser.describe(WebElement.class, new WebElementDescription.Builder()
-                .tagName("LI").innerText("SOLD OUT SHOP NOW HP H2310 In-ear Headset $13.99 ").build()).click();
-        browser.describe(Link.class, new LinkDescription.Builder()
-                .tagName("A").innerText("HEADPHONES ").build()).click();
-
-        browser.describe(WebElement.class, new WebElementDescription.Builder()
-                .tagName("LI").innerText("SOLD OUT SHOP NOW Logitech USB Headset H390 $39.99 ").build()).click();
-        browser.describe(Link.class, new LinkDescription.Builder()
-                .tagName("A").innerText("HEADPHONES ").build()).click();
-
-        // Go Home
-        browser.describe(Link.class, new LinkDescription.Builder()
-                .tagName("A").innerText("dvantage DEMO ").build()).click();
-    }
+//    @Test
+//    public void testLaptops() throws GeneralLeanFtException  {
+//
+//        //browser.navigate("http://nimbusserver:8000/#/");
+//
+//        // Laptops
+//        browser.describe(WebElement.class, new WebElementDescription.Builder()
+//                .tagName("SPAN").innerText("LAPTOPS").build()).click();
+//
+//        browser.describe(WebElement.class, new WebElementDescription.Builder()
+//                .tagName("LI").innerText("SOLD OUT SHOP NOW HP Chromebook 14 G1(ENERGY STAR) $299.99 ").build()).click();
+//        browser.describe(Link.class, new LinkDescription.Builder()
+//                .tagName("A").innerText("LAPTOPS ").build()).click();
+//
+//        browser.describe(WebElement.class, new WebElementDescription.Builder()
+//                .tagName("LI").innerText("SOLD OUT SHOP NOW HP Chromebook 14 G1(ES) $1,261.99 ").build()).click();
+//        browser.describe(Link.class, new LinkDescription.Builder()
+//                .tagName("A").innerText("LAPTOPS ").build()).click();
+//
+//        browser.describe(WebElement.class, new WebElementDescription.Builder()
+//                .tagName("LI").innerText("SOLD OUT SHOP NOW HP ENVY - 17t Touch Laptop $849.99 ").build()).click();
+//        browser.describe(Link.class, new LinkDescription.Builder()
+//                .tagName("A").innerText("LAPTOPS ").build()).click();
+//
+//        browser.describe(WebElement.class, new WebElementDescription.Builder()
+//                .tagName("LI").innerText("SOLD OUT SHOP NOW HP ENVY x360 - 15t Laptop $699.99 ").build()).click();
+//        browser.describe(Link.class, new LinkDescription.Builder()
+//                .tagName("A").innerText("LAPTOPS ").build()).click();
+//
+//        // Go Home
+//        browser.describe(Link.class, new LinkDescription.Builder()
+//                .tagName("A").innerText("dvantage DEMO ").build()).click();
+//    }
+//
+//    @Test
+//    public void testMice() throws GeneralLeanFtException  {
+//
+//       // browser.navigate("http://nimbusserver:8000/#/");
+//
+//        // Mice
+//        browser.describe(WebElement.class, new WebElementDescription.Builder()
+//                .tagName("SPAN").innerText("MICE").build()).click();
+//
+//        browser.describe(WebElement.class, new WebElementDescription.Builder()
+//                .tagName("LI").innerText("SOLD OUT SHOP NOW HP USB 3 Button Optical Mouse $9.99 ").build()).click();
+//        browser.describe(Link.class, new LinkDescription.Builder()
+//                .tagName("A").innerText("MICE ").build()).click();
+//
+//        browser.describe(WebElement.class, new WebElementDescription.Builder()
+//                .tagName("LI").innerText("SOLD OUT SHOP NOW HP Z3200 Wireless Mouse $29.99 ").build()).click();
+//        browser.describe(Link.class, new LinkDescription.Builder()
+//                .tagName("A").innerText("MICE ").build()).click();
+//
+//        browser.describe(WebElement.class, new WebElementDescription.Builder()
+//                .tagName("LI").innerText("SOLD OUT SHOP NOW HP Z3600 Wireless Mouse $15.99 ").build()).click();
+//        browser.describe(Link.class, new LinkDescription.Builder()
+//                .tagName("A").innerText("MICE ").build()).click();
+//
+//        browser.describe(WebElement.class, new WebElementDescription.Builder()
+//                .tagName("LI").innerText("SOLD OUT SHOP NOW HP Z3600 Wireless Mouse $15.99 ").build()).click();
+//        browser.describe(Link.class, new LinkDescription.Builder()
+//                .tagName("A").innerText("MICE ").build()).click();
+//
+//        browser.describe(WebElement.class, new WebElementDescription.Builder()
+//                .tagName("LI").innerText("SOLD OUT SHOP NOW HP Z4000 Wireless Mouse $9.99 ").build()).click();
+//        browser.describe(Link.class, new LinkDescription.Builder()
+//                .tagName("A").innerText("MICE ").build()).click();
+//
+//        // Go Home
+//        browser.describe(Link.class, new LinkDescription.Builder()
+//                .tagName("A").innerText("dvantage DEMO ").build()).click();
+//    }
+//
+//    @Test
+//    public void testHeadphones() throws GeneralLeanFtException  {
+//
+//        //browser.navigate("http://nimbusserver:8000/#/");
+//
+//        // Headphones
+//        browser.describe(WebElement.class, new WebElementDescription.Builder()
+//                .tagName("SPAN").innerText("HEADPHONES").build()).click();
+//
+//        browser.describe(WebElement.class, new WebElementDescription.Builder()
+//                .tagName("LI").innerText("SOLD OUT SHOP NOW Beats Studio 2 Over-Ear Matte Black Headphones $179.99 ").build()).click();
+//        browser.describe(Link.class, new LinkDescription.Builder()
+//                .tagName("A").innerText("HEADPHONES ").build()).click();
+//
+//        browser.describe(WebElement.class, new WebElementDescription.Builder()
+//                .tagName("LI").innerText("SOLD OUT SHOP NOW Bose SoundLink Around-ear Wireless Headphones II $279.95 ").build()).click();
+//        browser.describe(Link.class, new LinkDescription.Builder()
+//                .tagName("A").innerText("HEADPHONES ").build()).click();
+//
+//        browser.describe(WebElement.class, new WebElementDescription.Builder()
+//                .tagName("LI").innerText("SOLD OUT SHOP NOW HP H2310 In-ear Headset $13.99 ").build()).click();
+//        browser.describe(Link.class, new LinkDescription.Builder()
+//                .tagName("A").innerText("HEADPHONES ").build()).click();
+//
+//        browser.describe(WebElement.class, new WebElementDescription.Builder()
+//                .tagName("LI").innerText("SOLD OUT SHOP NOW Logitech USB Headset H390 $39.99 ").build()).click();
+//        browser.describe(Link.class, new LinkDescription.Builder()
+//                .tagName("A").innerText("HEADPHONES ").build()).click();
+//
+//        // Go Home
+//        browser.describe(Link.class, new LinkDescription.Builder()
+//                .tagName("A").innerText("dvantage DEMO ").build()).click();
+//    }
 
 
 
