@@ -27,28 +27,28 @@ public class LeanFtTest extends UnitTestClassBase {
         globalSetup(LeanFtTest.class);
 
         // Launch the local browser
-       browser = BrowserFactory.launch(BrowserType.CHROME);
-       browser.clearCache();
+       //browser = BrowserFactory.launch(BrowserType.CHROME);
+       //browser.clearCache();
         //Launch browser remotely on SRF
-//        BrowserDescription bd = new BrowserDescription();
-//
-//        bd.setType(BrowserType.CHROME); //or: bd.set("type", BrowserType.INTERNET_EXPLORER) or: bd.set("type", "FIREFOX")
-//
-//        bd.set("version", "66");
-//
-//        bd.set("osType", "Windows");
-//
-//        bd.set("osVersion", "10");
-//
-//        bd.set("testName", "Live from IntelliJ!");
-//
-//        browser = SrfLab.launchBrowser(bd);
+        BrowserDescription bd = new BrowserDescription();
+
+        bd.setType(BrowserType.CHROME); //or: bd.set("type", BrowserType.INTERNET_EXPLORER) or: bd.set("type", "FIREFOX")
+
+        bd.set("version", "66");
+
+        bd.set("osType", "Windows");
+
+        bd.set("osVersion", "10");
+
+        bd.set("testName", "Live from IntelliJ!");
+
+        browser = SrfLab.launchBrowser(bd);
 
         //Use Nimbus AOS
-        browser.navigate("http://nimbusserver.aos.com:8000");
+       // browser.navigate("http://nimbusserver.aos.com:8000");
 
         //Use Public AOS
-        //browser.navigate("http://www.advantageonlineshopping.com");
+        browser.navigate("http://www.advantageonlineshopping.com");
         //sleep(10000,0);
     }
 
@@ -58,10 +58,10 @@ public class LeanFtTest extends UnitTestClassBase {
         // "An Internal problem has occurred, please make sure the LeanFT sdk was properly initialized." - Jason H.
 
         //Close Local Browser
-        browser.close();
+        //browser.close();
 
         //Close SRF Browser
-        //SrfLab.releaseEnvironment(browser);
+        SrfLab.releaseEnvironment(browser);
 
         globalTearDown();
 
