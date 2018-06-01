@@ -45,10 +45,10 @@ public class LeanFtTest extends UnitTestClassBase {
         browser = SrfLab.launchBrowser(bd);
 
         //Use Nimbus AOS
-       // browser.navigate("http://nimbusserver.aos.com:8000");
+       browser.navigate("http://nimbusserver.aos.com:8000");
 
         //Use Public AOS
-        browser.navigate("http://www.advantageonlineshopping.com");
+        //browser.navigate("http://www.advantageonlineshopping.com");
         //sleep(10000,0);
     }
 
