@@ -40,14 +40,14 @@ public class LeanFtTest extends UnitTestClassBase {
 
         bd.set("osVersion", "10");
 
-        bd.set("testName", "Live from IntelliJ!");
+        bd.set("testName", "LStudios_AOS_INT");
 
-        bd.set("tunnelName", "Jeff Kingston Demo");
+        bd.set("tunnelName", "melton_tunnel");
 
         browser = SrfLab.launchBrowser(bd);
 
         //Use Nimbus AOS
-       browser.navigate("http://nimbusserver.aos.com:8000");
+       browser.navigate("http://nimbusserver.aos.com:8000/#/");
 
         //Use Public AOS
         //browser.navigate("http://www.advantageonlineshopping.com");
@@ -60,7 +60,7 @@ public class LeanFtTest extends UnitTestClassBase {
         // "An Internal problem has occurred, please make sure the LeanFT sdk was properly initialized." - Jason H.
 
         //Close Local Browser
-        //browser.close();
+//        browser.close();
 
         //Close SRF Browser
         SrfLab.releaseEnvironment(browser);
